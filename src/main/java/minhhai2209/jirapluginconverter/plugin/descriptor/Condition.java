@@ -19,6 +19,15 @@ public class Condition {
       case "user_is_logged_in":
         this.clazz = "com.atlassian.jira.plugin.webfragment.conditions.UserLoggedInCondition";
         break;
+      case "user_is_admin":
+        this.clazz = "com.atlassian.jira.plugin.webfragment.conditions.UserIsAdminCondition";
+        break;
+      case "user_is_sysadmin":
+        this.clazz = "com.atlassian.jira.plugin.webfragment.conditions.UserIsSysAdminCondition";
+        break;
+      case "has_project_permission":
+        this.clazz = "com.atlassian.jira.plugin.webfragment.conditions.HasProjectPermissionCondition";
+        break;
       case "entity_property_equal_to":
         this.clazz = "minhhai2209.jirapluginconverter.plugin.condition.EntityPropertyEqualToCondition";
         break;
