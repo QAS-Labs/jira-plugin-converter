@@ -20,6 +20,7 @@ import org.apache.commons.io.IOUtils;
 import java.io.InputStream;
 import java.util.Collection;
 
+
 public class PluginSetting {
 
 //  public static final String ARTIFACT_ID = "generated_artifact_id";
@@ -89,6 +90,7 @@ public class PluginSetting {
       }
 
     });
+
     if (baseUrl == null) {
       baseUrl = descriptor.getBaseUrl();
     }

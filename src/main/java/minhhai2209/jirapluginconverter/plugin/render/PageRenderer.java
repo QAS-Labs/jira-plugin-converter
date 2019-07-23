@@ -5,6 +5,7 @@ import com.atlassian.jira.component.ComponentAccessor;
 import com.atlassian.jira.security.JiraAuthenticationContext;
 import com.atlassian.jira.timezone.TimeZoneService;
 import com.atlassian.jira.user.ApplicationUser;
+import com.atlassian.jira.config.properties.APKeys;
 import com.atlassian.sal.api.message.LocaleResolver;
 import com.atlassian.sal.api.user.UserManager;
 import com.atlassian.sal.api.user.UserProfile;
@@ -109,7 +110,7 @@ public class PageRenderer extends HttpServlet {
         String w;
         String h;
 
-        String xdm_e = PluginSetting.getPluginJiraBaseUrl();
+        String xdm_e = ComponentAccessor.getApplicationProperties().getString(APKeys.JIRA_BASEURL);
         String cp = JiraUtils.getContextPath();
         String ns = PluginSetting.getDescriptor().getKey() + "__" + moduleKey;
         String xdm_c = "channel-" + ns;
@@ -234,7 +235,7 @@ public class PageRenderer extends HttpServlet {
         String w = "100%";
         String h = "100%";
 
-        String xdm_e = PluginSetting.getPluginJiraBaseUrl();
+        String xdm_e = ComponentAccessor.getApplicationProperties().getString(APKeys.JIRA_BASEURL);
         String cp = JiraUtils.getContextPath();
         String ns = PluginSetting.getDescriptor().getKey() + "__" + moduleKey;
         String xdm_c = "channel-" + ns;

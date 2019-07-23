@@ -6,6 +6,7 @@ import com.atlassian.jira.security.JiraAuthenticationContext;
 import com.atlassian.jira.timezone.TimeZoneService;
 import com.atlassian.jira.user.ApplicationUser;
 import com.atlassian.jira.user.util.UserUtil;
+import com.atlassian.jira.config.properties.APKeys;
 import com.atlassian.sal.api.auth.LoginUriProvider;
 import com.atlassian.sal.api.message.LocaleResolver;
 import com.atlassian.sal.api.pluginsettings.PluginSettings;
@@ -321,7 +322,7 @@ public class ConfigurePluginServlet extends HttpServlet {
           String w;
           String h;
 
-          String xdm_e = PluginSetting.getPluginJiraBaseUrl();
+          String xdm_e = ComponentAccessor.getApplicationProperties().getString(APKeys.JIRA_BASEURL);
           String cp = JiraUtils.getContextPath();
           String ns = PluginSetting.getDescriptor().getKey() + "__" + moduleKey;
           String xdm_c = "channel-" + ns;

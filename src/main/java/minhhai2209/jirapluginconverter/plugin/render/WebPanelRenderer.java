@@ -7,6 +7,7 @@ import com.atlassian.jira.timezone.TimeZoneService;
 import com.atlassian.jira.user.ApplicationUser;
 import com.atlassian.plugin.Plugin;
 import com.atlassian.plugin.web.renderer.RendererException;
+import com.atlassian.jira.config.properties.APKeys;
 import com.atlassian.sal.api.message.LocaleResolver;
 import com.atlassian.templaterenderer.TemplateRenderer;
 import minhhai2209.jirapluginconverter.connect.descriptor.webpanel.WebPanel;
@@ -67,7 +68,7 @@ public class WebPanelRenderer implements com.atlassian.plugin.web.renderer.WebPa
 
       Map<String, String> productContext = ParameterContextBuilder.buildContext(null, context, null, null);
 
-      String xdm_e = PluginSetting.getPluginJiraBaseUrl();
+      String xdm_e = ComponentAccessor.getApplicationProperties().getString(APKeys.JIRA_BASEURL);
       String cp = JiraUtils.getContextPath();
       String ns = PluginSetting.getDescriptor().getKey() + "__" + moduleKey;
       String xdm_c = "channel-" + ns;

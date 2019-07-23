@@ -8,6 +8,7 @@ import com.atlassian.jira.plugin.workflow.WorkflowPluginFunctionFactory;
 import com.atlassian.jira.security.JiraAuthenticationContext;
 import com.atlassian.jira.timezone.TimeZoneService;
 import com.atlassian.jira.user.ApplicationUser;
+import com.atlassian.jira.config.properties.APKeys;
 import com.atlassian.sal.api.message.LocaleResolver;
 import com.opensymphony.workflow.loader.AbstractDescriptor;
 import com.opensymphony.workflow.loader.FunctionDescriptor;
@@ -128,7 +129,7 @@ public class WorkflowPluginFactory extends AbstractWorkflowPluginFactory impleme
 
       Map<String, String> productContext = ParameterContextBuilder.buildWorkflowContext( velocityParams);
 
-      String xdm_e = PluginSetting.getPluginJiraBaseUrl();
+      String xdm_e = ComponentAccessor.getApplicationProperties().getString(APKeys.JIRA_BASEURL);
       String cp = JiraUtils.getContextPath();
       String ns = PluginSetting.getDescriptor().getKey() + "__" + key;
       String xdm_c = "channel-" + ns;
