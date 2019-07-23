@@ -4,11 +4,13 @@
   <!-- plugin info -->
   
   <plugin-info>
+    <param name="plugin-type">data-center</param>
     <description>${project.description}</description>
     <version>${project.version}</version>
     <vendor name="${project.organization.name}" url="${project.organization.url}" />
-    <param name="atlassian-data-center-compatible">true</param>
     <param name="configure.url">/plugins/servlet/${project.artifactId}/configure</param>
+    <param name="atlassian-data-center-compatible">true</param>
+    <param name="atlassian-data-center-status">compatible</param>
     <!-- <plugin_info_xml /> -->
   </plugin-info>
 
