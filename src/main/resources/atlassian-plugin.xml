@@ -4,7 +4,7 @@
   <!-- plugin info -->
   
   <plugin-info>
-    <param name="plugin-type">data-center</param>
+    <param name="plugin-type">both</param>
     <description>${project.description}</description>
     <version>${project.version}</version>
     <vendor name="${project.organization.name}" url="${project.organization.url}" />
